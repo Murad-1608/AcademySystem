@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Yeni tələbə";
+}
+@model StudentManagementSystem.Models.StudentModels.UpdateStudentModel
+
+
+<div class="card-body">
+    <h3>Tələbənin məlumatlarını yenilə</h3>
+    <br />
+    <form method="post" class="forms-sample" asp-controller="student" asp-action="create" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+            <label for="exampleInputName1">Ad</label>
+            <input type="text" asp-for="Name" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">Soyad</label>
+            <input type="text" asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">Qrup</label>
+            <input type="text" asp-for="Group" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="Group" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">İxtisas</label>
+            <input type="text" asp-for="Specialty" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="Specialty" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">Nömrə</label>
+            <input type="text" asp-for="PhoneNumber" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">Doğum tarixi</label>
+            <input type="date" asp-for="BirthDate" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+            <br />
+            <label for="exampleInputName1">Yaşadığı ünvan</label>
+            <input type="text" asp-for="Address" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+            <br />
+            <button type="submit" class="btn btn-info">Təstiqlə</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

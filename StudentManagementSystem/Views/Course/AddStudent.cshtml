@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Yeni kurs";
+}
+@model StudentManagementSystem.Models.CourseModels.AddStudentCourseModel
+
+
+<div class="card-body">
+    <h3>Yeni kurs əlavə et</h3>
+    <br />
+    <form method="post" class="forms-sample" asp-controller="course" asp-action="addstudent" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="exampleInputName1">Tələbə İd-si</label>
+            <input type="text" asp-for="StudentId" class="form-control" id="exampleInputName1" placeholder="" />
+            <span asp-validation-for="StudentId" class="text-danger"></span>
+            <br />
+            <input type="hidden" asp-for="CourseId" />
+            <br />
+            <button type="submit" class="btn btn-info">Təstiqlə</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
